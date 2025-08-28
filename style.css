@@ -12,3 +12,61 @@
     --grey-primary-50: rgba(144, 163, 191, 0.5);
     --grey-secondary: rgba(32, 32, 32, 0.5);
 }
+
+/* normalize styles */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: var(--font-family), sans-serif;
+}
+
+ul,
+ol {
+    padding-left: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol {
+    margin-block: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+html {
+    height: 100%;
+    scrollbar-gutter: stable; /* убираем скачок интерфейса по горизонтали при появлении / исчезновении скроллбара */
+    scroll-behavior: smooth; /* плавный скролл*/
+}
+
+button,
+label {
+    cursor: pointer;
+}

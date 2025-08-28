@@ -70,3 +70,29 @@ button,
 label {
     cursor: pointer;
 }
+
+/* headers */
+h1 {
+    font-weight: 700;
+    font-size: 4rem; /* 64px */
+    text-transform: capitalize;
+    color: var(--color-primary);
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 3.875rem; /* 62px */
+    color: var(--color-primary);
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 1.125rem; /* 18px */
+    color: var(--color-primary);
+}
+
+p {
+    font-weight: 400;
+    font-size: 1rem; /* 16px */
+    color: var(--color-primary);
+}

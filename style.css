@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --font-family: "Poppins", sans-serif;
+    --font-family: "Poppins", Verdana;
 
     --color-primary: #202020;
     --white: #fff;
@@ -11,6 +11,8 @@
     --grey-primary: #90a3bf;
     --grey-primary-50: rgba(144, 163, 191, 0.5);
     --grey-secondary: rgba(32, 32, 32, 0.5);
+
+    --width-container: 1312px;
 }
 
 /* normalize styles */
@@ -24,6 +26,8 @@ body {
     margin: 0;
     min-height: 100%;
     font-family: var(--font-family), sans-serif;
+    background-color: var(--white);
+    color: var(--color-primary)
 }
 
 ul,
@@ -95,4 +99,88 @@ p {
     font-weight: 400;
     font-size: 1rem; /* 16px */
     color: var(--color-primary);
+}
+
+.container {
+    max-width: var(--width-container);
+    width: 100%;
+    margin-inline: auto;
+}
+
+/* HEADER */
+.header {
+    padding: 33px 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    gap: 15px;
+    flex-wrap: nowrap;
+
+    height: 51px;
+    margin-right: 65px;
+}
+
+.header-logo svg {
+    margin-top: 8px;
+}
+
+.header-logo-name {
+    font-weight: 400;
+    font-size: 2.125rem; /* 34px */
+}
+
+@media screen and (max-width: 390px) {
+    .header-logo-name {
+        display: none;
+    }
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 610px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .header-menu {
+        display: none;
+    }
+}
+
+.header-menu-item{
+    text-decoration: none;
+    padding: 5px;
+}
+
+.header-menu-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.header-menu-item > span {
+    font-size: 1.25rem; /* 20px */
+    line-height: 135%;
+    text-align: center;
+    color: var(--color-primary);
+    white-space: nowrap;
+    transition: text-shadow 0.2s ease-in-out;
+}
+
+.header-menu-item:active > span,
+.header-menu-item:last-child > span {
+    text-shadow: 0px 0px 1px var(--color-primary);
+}
+
+@media (hover: hover) {
+    .header-menu-item:hover > span {
+        text-shadow: 0px 0px 1px var(--color-primary);
+    }
 }

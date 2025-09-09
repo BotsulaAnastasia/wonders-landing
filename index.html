@@ -29,6 +29,72 @@
             </div>
         </div>
     </header>
+    <main>
+        <section class="welcome-section">
+            <div class="container welcome-section-container">
+                <div class="welcome-section-content">
+                    <h1 class="welcome-section-title">Skip the Climbing, Catch the Bus</h1>
+                    <p>We sell tickets to the best seats in the house – houses on wheels, that is! Get ready for jaw-dropping views without breaking a sweat.</p>
+                    <form id="welcome-section-form" class="welcome-section-form" action="" method="get">
+                        <fieldset class="radio-input-group">
+                            <div>
+                                <input type="radio" name="trip-direction" id="round-trip" class="radio-input" checked>
+                                <label for="round-trip" class="radio-label">Round trip</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="trip-direction" id="one-way" class="radio-input">
+                                <label for="one-way" class="radio-label">One Way</label>
+                            </div>
+                            <div>
+                                <svg class="form-range-icon" width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="9" cy="7" r="4" fill="#0578FF"/>
+                                    <path d="M3 20C1.89543 20 0.974346 19.0907 1.24685 18.0202C2.12788 14.5595 5.26504 12 9 12C12.735 12 15.8721 14.5595 16.7531 18.0202C17.0257 19.0907 16.1046 20 15 20H3Z" fill="#0578FF"/>
+                                </svg>
+                                <button class="form-range-btn" id="btn-minus" disabled></button>
+                                <input type="number" min="1" max="12" value="1" name="passenger-numbers" id="passenger-numbers" class="range-input" aria-label="Number of passengers">
+                                <button class="form-range-btn" id="btn-plus"></button>
+                            </div>
+                        </fieldset>
+                        <fieldset class="text-input-group">
+                            <div>
+                                <label for="departure" class="text-label">Departure</label>
+                                <input type="text" list="departure-stations" id="departure" class="text-input" name="departure" placeholder="Your City/Station" required>
+                                <datalist id="departure-stations">
+                                    <option value="Zermatt">
+                                    <option value="Item">
+                                    <option value="Item">
+                                </datalist>
+                            </div>
+                            <div>
+                                <label for="arrival" class="text-label">Arrival</label>
+                                <input type="text" list="arrival-stations" id="arrival" class="text-input" name="arrival" placeholder="Where to?" required>
+                                <datalist id="arrival-stations">
+                                    <option value="Zermatt">
+                                    <option value="Item">
+                                    <option value="Item">
+                                </datalist>
+                            </div>
+                        </fieldset>
+                        <fieldset class="text-input-group">
+                            <legend class="form-legend">Pick your lucky day</legend>
+                            <div class="text-input-icon">
+                                <input type="text" name="depart-date" id="depart-date" class="text-input --date" placeholder="Depart" aria-label="Departure date" required
+                                       onfocus="(this.type='date')" onblur="(this.type='text')">
+                            </div>
+                            <div class="text-input-icon">
+                                <input type="text" name="return-date" id="return-date" class="text-input --date" placeholder="Return" aria-label="Return date" required
+                                       onfocus="(this.type='date')" onblur="(this.type='text')">
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="form-submit-btn">Find My Alpine Ride</button>
+                    </form>
+                </div>
+                <div class="welcome-section-img">
+                    <img src="./assets/images/welcome.png" alt="Rocky path to the mountain hut">
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="./script.js"></script>
 </body>
 </html>

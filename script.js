@@ -72,6 +72,19 @@ btnMinus.addEventListener('click', () => {
     }
 })
 
+// disable/activate Return input when switching radio buttons
+const roundTripInput = document.getElementById('round-trip');
+const oneWayInput = document.getElementById('one-way');
+const returnDateInput = document.getElementById('return-date');
+
+roundTripInput.addEventListener('focus', () => {
+    activateElement(returnDateInput);
+})
+
+oneWayInput.addEventListener('focus', () => {
+    disableElement(returnDateInput);
+})
+
 function disableElement(el) {
     el.setAttribute('disabled', '');
 }

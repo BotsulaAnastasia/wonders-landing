@@ -579,3 +579,59 @@ html.--lock {
         display: none;
     }
 }
+
+/* FACTS SECTION */
+.facts-section {
+    background-color: var(--color-primary-accent);
+    color: var(--white);
+    padding: 60px 20px;
+}
+
+.facts-section-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.fact {
+    display: flex;
+    flex-direction: column;
+}
+
+.fact-number {
+    font-weight: 700;
+    font-size: 3.125rem; /* 50px */
+    text-align: center;
+}
+
+.fact-caption {
+    font-weight: 500;
+    font-size: 1.25rem; /* 20px */
+    text-align: center;
+}
+
+@media screen and (max-width: 890px) {
+    .facts-section-container {
+        max-width: 506px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .facts-section {
+        padding: 30px 20px;
+    }
+
+    .facts-section-container {
+        gap: 30px;
+    }
+
+    .fact-number {
+        font-size: 2.5rem; /* 40px */
+    }
+
+    .fact-caption {
+        font-size: 1rem;
+    }
+}

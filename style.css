@@ -133,13 +133,23 @@ p {
     margin-inline: auto;
 }
 
+.paddings {
+    padding-inline: 32px;
+}
+
+@media screen and (max-width: 425px) {
+    .paddings {
+        padding-inline: 20px;
+    }
+}
+
 html.--lock {
     overflow: hidden;
 }
 
 /* HEADER */
 .header {
-    padding: 33px 20px;
+    padding-block: 33px;
 }
 
 .header-container {
@@ -320,7 +330,7 @@ html.--lock {
 /* WELCOME SECTION */
 .welcome-section {
     background: linear-gradient(180deg, #f5f5f5 0%, #ddecff 50.17%, #f5f5f5 100%);
-    padding: 64px 32px 128px;
+    padding-block: 64px 128px;
 }
 
 .welcome-section-container {
@@ -544,7 +554,7 @@ html.--lock {
 
 @media screen and (max-width: 760px) {
     .welcome-section {
-        padding: 24px 20px 128px;
+        padding-block: 24px 128px;
     }
 
     .welcome-section-title {
@@ -584,7 +594,7 @@ html.--lock {
 .facts-section {
     background-color: var(--color-primary-accent);
     color: var(--white);
-    padding: 60px 20px;
+    padding-block: 60px;
 }
 
 .facts-section-container {
@@ -620,7 +630,7 @@ html.--lock {
 
 @media screen and (max-width: 425px) {
     .facts-section {
-        padding: 30px 20px;
+        padding-block: 30px;
     }
 
     .facts-section-container {

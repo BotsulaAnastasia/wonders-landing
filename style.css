@@ -623,8 +623,13 @@ html.--lock {
 }
 
 @media screen and (max-width: 890px) {
+    .facts-section {
+        padding-block: 64px;
+    }
+
     .facts-section-container {
         max-width: 506px;
+        justify-content: space-around;
     }
 }
 

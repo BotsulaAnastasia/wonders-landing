@@ -645,3 +645,132 @@ html.--lock {
         font-size: 1rem;
     }
 }
+
+/* GALLERY SECTION */
+.gallery-section {
+    padding-block: 128px;
+}
+
+.gallery-section-title {
+    font-size: 4rem; /* 64px */
+    margin-bottom: 24px;
+}
+
+@media screen and (max-width: 760px) {
+    .gallery-section-title {
+        font-size: 2rem; /* 32px */
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template: repeat(3, auto) / minmax(auto, 528px) minmax(auto, 305px) minmax(auto, 416px);
+    grid-template-areas:
+        "item1 item3 item4"
+        "item2 item3 item4"
+        "item2 item5 item5";
+    gap: 24px 32px;
+}
+
+.gallery-item {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.gallery-item-1 {
+    grid-area: item1;
+    height: 376px;
+    background-image: url("./assets/images/gallery-img-1.png");
+}
+
+.gallery-item-2 {
+    grid-area: item2;
+    height: 376px;
+    background-image: url("./assets/images/gallery-img-2.png");
+}
+
+.gallery-item-3 {
+    grid-area: item3;
+    height: 489px;
+    background-image: url("./assets/images/gallery-img-3.png");
+}
+
+.gallery-item-4 {
+    grid-area: item4;
+    height: 489px;
+    background-image: url("./assets/images/gallery-img-4.png");
+}
+
+.gallery-item-5 {
+    grid-area: item5;
+    height: 264px;
+    background-image: url("./assets/images/gallery-img-5.png");
+}
+
+@media screen and (max-width: 768px) {
+    .gallery {
+        grid-template: repeat(4, auto) / repeat(2, 1fr);
+        grid-template-areas:
+        "item1 item1"
+        "item2 item2"
+        "item3 item4"
+        "item5 item5";
+    }
+
+    .gallery-item-1 {
+        height: 380px;
+    }
+
+    .gallery-item-2 {
+        height: 362px;
+    }
+
+    .gallery-item-3,
+    .gallery-item-4 {
+        height: 425px;
+    }
+
+    .gallery-item-5 {
+        height: 225px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .gallery-section {
+        padding-block: 64px;
+    }
+
+    .gallery {
+        grid-template: repeat(5, auto) / 1fr;
+        grid-template-areas:
+            "item1"
+            "item2"
+            "item3"
+            "item4"
+            "item5";
+        gap: 12px;
+    }
+
+    .gallery-item-1 {
+        height: 220px;
+    }
+
+    .gallery-item-2 {
+        height: 209px;
+    }
+
+    .gallery-item-3 {
+        height: 472px;
+    }
+
+    .gallery-item-4 {
+        height: 637px;
+    }
+
+    .gallery-item-5 {
+        height: 141px;
+    }
+}

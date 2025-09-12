@@ -12,6 +12,7 @@
     --grey-primary: #90a3bf;
     --grey-primary-50: rgba(144, 163, 191, 0.5);
     --grey-secondary: rgba(32, 32, 32, 0.5);
+    --gradient-body: linear-gradient(180deg, #f5f5f5 0%, #ddecff 50.17%, #f5f5f5 100%);
 
     --width-container: 1312px;
 }
@@ -27,8 +28,8 @@ body {
     margin: 0;
     min-height: 100%;
     font-family: var(--font-family), sans-serif;
-    background-color: var(--white);
-    color: var(--color-primary)
+    color: var(--color-primary);
+    background: var(--gradient-body);
 }
 
 ul,
@@ -329,7 +330,6 @@ html.--lock {
 
 /* WELCOME SECTION */
 .welcome-section {
-    background: linear-gradient(180deg, #f5f5f5 0%, #ddecff 50.17%, #f5f5f5 100%);
     padding-block: 64px 128px;
 }
 

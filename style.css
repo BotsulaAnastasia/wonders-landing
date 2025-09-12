@@ -464,6 +464,7 @@ html.--lock {
         width: 24px;
         padding: 0;
         border: none;
+        border-radius: 5px;
         text-align: center;
         font-weight: 500;
         font-size: 0.875rem; /* 14px */
@@ -512,7 +513,8 @@ html.--lock {
         color: var(--grey-primary);
     }
 
-    .text-input:focus {
+    .text-input:focus,
+    .range-input:focus {
         outline: 1px solid var(--color-primary-accent);
     }
 

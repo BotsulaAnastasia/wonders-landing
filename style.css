@@ -148,6 +148,31 @@ html.--lock {
     overflow: hidden;
 }
 
+.underline-link {
+    position: relative;
+}
+
+.underline-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--color-primary);
+    transition: transform 0.3s;
+
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+@media (hover: hover) {
+    .underline-link:hover::after {
+        transform: scale(1);
+    }
+}
+
 /* HEADER */
 .header {
     padding-block: 33px;
@@ -949,4 +974,69 @@ html.--lock {
 @keyframes sweep {
     0%    {opacity: 0;}
     100%  {opacity: 1;}
+}
+
+/* CONTACT US SECTION */
+.contacts-section {
+    background: linear-gradient(var(--white) 23%, var(--color-primary-accent) 23%);
+    padding-bottom: 128px;
+}
+
+.contacts-section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 640px;
+    margin-inline: auto;
+    padding-block: 60px;
+
+    background-color: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--grey-secondary);
+    text-align: center;
+}
+
+.contacts-section-title {
+    font-weight: 700;
+    font-size: 4rem; /* 64px */
+    line-height: 120%;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact {
+    font-size: 1.75rem; /* 28px */
+    line-height: 140%;
+    text-decoration: none;
+    color: var(--color-primary);
+    margin-inline: auto;
+}
+
+.contact-address {
+    font-size: 1.125rem; /* 18px */
+    line-height: 150%;
+}
+
+@media screen and (max-width: 768px) {
+    .contacts-section-container {
+        max-width: 464px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .contacts-section-title {
+        font-size: 2.25rem; /* 36px */
+    }
+
+    .contact {
+        font-size: 1.25rem; /* 20px */
+    }
+
+    .contact-address {
+        font-size: 1.125rem; /* 18px */
+    }
 }

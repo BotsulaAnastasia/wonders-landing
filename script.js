@@ -3,21 +3,45 @@ const burgerIcon = document.querySelector('.burger');
 const headerMenu = document.querySelector('.header-menu');
 const HTML = document.querySelector('html');
 
+// add an event listener if the screen width is < 768 (i.e. if there is a burger menu icon)
+if (burgerIcon && window.innerWidth <= 768) {
+    burgerIcon.addEventListener('click', handleBurgerIconClick);
+}
+
+// when changing the screen width > 768 (i.e. when there are no burger menu icon), delete the event listener, otherwise add it
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        burgerIcon.removeEventListener('click', handleBurgerIconClick);
+        headerMenu.removeEventListener('click', handleHeaderMenuClick);
+
+        if (burgerIcon.classList.contains('--open')) {
+            toggleMenu();
+        }
+    } else {
+        burgerIcon.addEventListener('click', handleBurgerIconClick);
+    }
+});
+
 function toggleMenu () {
     burgerIcon.classList.toggle('--open');
     headerMenu.classList.toggle('--open');
     HTML.classList.toggle('--lock');
 }
 
-if (burgerIcon) {
-    burgerIcon.addEventListener('click', toggleMenu)
+function  handleBurgerIconClick () {
+    toggleMenu();
 
-    headerMenu.addEventListener('click', (e) => {
-        if (e.target.classList.contains('header-menu-item') ||
-            e.target.parentNode.classList.contains('header-menu-item')) {
-            toggleMenu();
-        }
-    })
+    if (burgerIcon.classList.contains('--open')) {
+        headerMenu.addEventListener('click', handleHeaderMenuClick)
+    }
+}
+
+function handleHeaderMenuClick (e) {
+    if (e.target.classList.contains('header-menu-item') ||
+        e.target.closest('.header-menu-item')) {
+        toggleMenu();
+        headerMenu.removeEventListener('click', handleHeaderMenuClick);
+    }
 }
 
 // Handle welcome section form submit

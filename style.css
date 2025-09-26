@@ -712,6 +712,13 @@ html.--lock {
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+@media (hover: hover) {
+    .gallery-item:hover {
+        transform: scale(1.02);
+    }
 }
 
 .gallery-item-1 {
@@ -838,6 +845,14 @@ html.--lock {
 .app-link {
     display: inline-block;
     max-height: 65px;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease;
+}
+
+@media (hover: hover) {
+    .app-link:hover {
+        transform: scale(1.02);
+        filter: drop-shadow(0 5px 5px rgb(0 0 0 / 0.5));
+    }
 }
 
 @media screen and (max-width: 768px) {

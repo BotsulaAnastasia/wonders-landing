@@ -9,7 +9,17 @@ if (burgerIcon && window.innerWidth <= 768) {
 }
 
 // when changing the screen width > 768 (i.e. when there are no burger menu icon), delete the event listener, otherwise add it
-window.addEventListener('resize', () => {
+window.addEventListener('resize', debounce(handleWindowResize, 200));
+
+function debounce(func, wait) {
+    let timeout;
+    return function() {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, arguments), wait);
+    };
+}
+
+function handleWindowResize() {
     if (window.innerWidth > 768) {
         burgerIcon.removeEventListener('click', handleBurgerIconClick);
         headerMenu.removeEventListener('click', handleHeaderMenuClick);
@@ -20,7 +30,7 @@ window.addEventListener('resize', () => {
     } else {
         burgerIcon.addEventListener('click', handleBurgerIconClick);
     }
-});
+}
 
 function toggleMenu () {
     burgerIcon.classList.toggle('--open');

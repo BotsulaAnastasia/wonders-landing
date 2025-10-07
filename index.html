@@ -58,21 +58,13 @@
                         <fieldset class="text-input-group">
                             <div>
                                 <label for="departure" class="text-label">Departure</label>
-                                <input type="text" list="departure-stations" id="departure" class="text-input" name="departure" placeholder="Your City/Station" required>
-                                <datalist id="departure-stations">
-                                    <option value="Zermatt">
-                                    <option value="Item">
-                                    <option value="Item">
-                                </datalist>
+                                <input type="text" list="departure-stations" id="departure" class="text-input --stations" name="departure" placeholder="Your City/Station" required>
+                                <ul class="input-dropdown --hidden" id="departure-stations"></ul>
                             </div>
                             <div>
                                 <label for="arrival" class="text-label">Arrival</label>
-                                <input type="text" list="arrival-stations" id="arrival" class="text-input" name="arrival" placeholder="Where to?" required>
-                                <datalist id="arrival-stations">
-                                    <option value="Zermatt">
-                                    <option value="Item">
-                                    <option value="Item">
-                                </datalist>
+                                <input type="text" list="arrival-stations" id="arrival" class="text-input --stations" name="arrival" placeholder="Where to?" required>
+                                <ul class="input-dropdown --hidden" id="arrival-stations"></ul>
                             </div>
                         </fieldset>
                         <fieldset class="text-input-group">
@@ -330,6 +322,6 @@
             </div>
         </div>
     </footer>
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
 </body>
 </html>

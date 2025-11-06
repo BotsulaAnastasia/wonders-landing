@@ -546,6 +546,10 @@ html.--lock {
         outline: 1px solid var(--color-primary-accent);
     }
 
+    .text-input.--error{
+        outline: 1px solid red;
+    }
+
     .text-input:disabled {
         background-color: var(--color-primary-accent-10);
     }
@@ -635,6 +639,13 @@ html.--lock {
 .not-found-span {
     font-size: 0.875rem; /* 14px */
     color: var(--grey-secondary);
+}
+
+.error-message {
+    font-size: 0.875rem;
+    color: red;
+    text-align: center;
+    margin-top: -18px;
 }
 
 @keyframes dropdownAppear {

@@ -1,6 +1,7 @@
 import debounce from "../utils/debounce.js";
 import { Stations as STATIONS } from "../mocks/stations.js";
 import { toggleNextSiblingElement } from "../utils/elementsAvailability.js";
+import { validateInputsForStations } from "./validateForm.js";
 
 const inputsForStations = document.querySelectorAll('.text-input.--stations');
 
@@ -14,7 +15,10 @@ export default function addEventHandlersToInputsForStations() {
         });
 
         // Hidden the dropdown after blur the input
-        input.addEventListener('blur', (e) => toggleNextSiblingElement(e.target));
+        input.addEventListener('blur', (e) => {
+            toggleNextSiblingElement(e.target);
+            validateInputsForStations();
+        });
 
         input.addEventListener('keyup', debounce(renderDropdownContent, 200));
     });

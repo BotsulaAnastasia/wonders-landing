@@ -1,5 +1,6 @@
 import { disableElement, activateElement } from "../utils/elementsAvailability.js";
 import addEventHandlersToInputsForStations from "./dropdown.js";
+import { validateInputsForStations, validateInputsForDate} from "./validateForm.js";
 
 const welcomeForm = document.getElementById('welcome-section-form');
 // Elements (radio buttons) to select the trip direction
@@ -17,6 +18,8 @@ export default function addEventHandlersToForm() {
     welcomeForm.addEventListener('submit', (e) => {
         // don't reload the page
         e.preventDefault();
+        const isFormValid = validateInputsForStations() && validateInputsForDate();
+        console.log(isFormValid);
     });
 
     // disable/activate Return input when switching radio buttons
@@ -25,7 +28,10 @@ export default function addEventHandlersToForm() {
     });
 
     oneWayInput.addEventListener('focus', () => {
+        returnDateInput.value = '';
         disableElement(returnDateInput);
+        // remove the error if it was previously on return-date input
+        validateInputsForDate();
     });
 
     // switching the number of passengers
@@ -75,5 +81,3 @@ function decreaseNumOfPassengers() {
         activateElement(btnPlus);
     }
 }
-
-//TODO: сделать валидацию формы поиска: проверка корректности выбора станций (чтобы не совпадали), проверка даты (чтобы не была в прошлом)

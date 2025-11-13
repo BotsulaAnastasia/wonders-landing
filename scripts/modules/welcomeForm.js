@@ -16,10 +16,7 @@ const inputPassengerNumbers = document.getElementById('passenger-numbers');
 export default function addEventHandlersToForm() {
     // Handle welcome section form submit
     welcomeForm.addEventListener('submit', (e) => {
-        // don't reload the page
-        e.preventDefault();
-        const isFormValid = validateInputsForStations() && validateInputsForDate();
-        console.log(isFormValid);
+        handleFormSubmit(e);
     });
 
     // disable/activate Return input when switching radio buttons
@@ -79,5 +76,19 @@ function decreaseNumOfPassengers() {
 
     if (inputPassengerNumbers.value < 12) {
         activateElement(btnPlus);
+    }
+}
+
+function handleFormSubmit(e) {
+    // don't reload the page
+    e.preventDefault();
+
+    const isFormValid = validateInputsForStations() && validateInputsForDate();
+    if (isFormValid) {
+        e.target.submit();
+
+        const data = new FormData(e.target);
+        const dataObject = Object.fromEntries(data);
+        console.log(dataObject);
     }
 }

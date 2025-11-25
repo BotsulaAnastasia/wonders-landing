@@ -23,7 +23,7 @@ export function validateInputsForStations() {
     return true; // there are no errors
 }
 
-const inputsForDate = document.querySelectorAll('.text-input.--date');
+const inputsForDate = [...document.querySelectorAll('.text-input.--date')];
 
 inputsForDate.forEach(input => {
     input.addEventListener('input', validateInputsForDate);
@@ -33,23 +33,22 @@ export function validateInputsForDate() {
     const errorId = 'error-date';
     const errorNode = document.getElementById(errorId);
 
-    const departDateInput = document.getElementById('depart-date');
-    const returnDateInput = document.getElementById('return-date');
-
-    const inputs = [departDateInput, returnDateInput];
+    const [departDateInput, returnDateInput] = inputsForDate;
 
     const currentDate = new Date();
 
     // pre-delete the error
     if (errorNode !== null) {
         errorNode.remove();
-        removeErrorClass(...inputs);
+        removeErrorClass(...inputsForDate);
     }
 
     // the first check is that both dates are not in the past
-    const invalidInputs = inputs.filter(input => new Date(input.value) < currentDate);
+    const invalidInputs = inputsForDate.filter((input) => {
+        return new Date(input.value).setHours(0, 0, 0, 0) < currentDate.setHours(0, 0, 0, 0);
+    });
     if (invalidInputs.length > 0) {
-        const errorMessage = 'The date can\'t be earlier or the same as the current one';
+        const errorMessage = 'The date can\'t be earlier then the current one';
         return reportError(errorMessage, errorId, ...invalidInputs); // return false
     } else if (new Date(returnDateInput.value) < new Date(departDateInput.value)) {
         // the second check is that the return date is not earlier than the departure date.

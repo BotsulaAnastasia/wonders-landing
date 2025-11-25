@@ -6,6 +6,7 @@ const welcomeForm = document.getElementById('welcome-section-form');
 // Elements (radio buttons) to select the trip direction
 const roundTripInput = document.getElementById('round-trip');
 const oneWayInput = document.getElementById('one-way');
+const departDateInput = document.getElementById('depart-date');
 const returnDateInput = document.getElementById('return-date');
 
 // Range elements for switching the number of passengers
@@ -13,7 +14,19 @@ const btnPlus = document.getElementById('btn-plus');
 const btnMinus = document.getElementById('btn-minus');
 const inputPassengerNumbers = document.getElementById('passenger-numbers');
 
-export default function addEventHandlersToForm() {
+export function customizeCalendar() {
+    const config = {
+        dateFormat: "j F Y",
+        "locale": {
+            "firstDayOfWeek": 1 // start week on Monday
+        },
+        disableMobile: "true",
+    }
+    flatpickr(departDateInput, config);
+    flatpickr(returnDateInput, config);
+}
+
+export function addEventHandlersToForm() {
     // Handle welcome section form submit
     welcomeForm.addEventListener('submit', (e) => {
         handleFormSubmit(e);

@@ -1,6 +1,6 @@
 import debounce from "./utils/debounce.js";
 import { switchEventHandlersOnBurgerElements } from "./modules/burger.js";
-import addEventHandlersToForm from "./modules/welcomeForm.js";
+import { customizeCalendar, addEventHandlersToForm } from "./modules/welcomeForm.js";
 
 const burgerIcon = document.querySelector('.burger');
 const welcomeForm = document.getElementById('welcome-section-form');
@@ -9,7 +9,10 @@ const welcomeForm = document.getElementById('welcome-section-form');
 if (burgerIcon) switchEventHandlersOnBurgerElements();
 
 // handling welcome section form element events
-if (welcomeForm) addEventHandlersToForm();
+if (welcomeForm) {
+    customizeCalendar();
+    addEventHandlersToForm();
+}
 
 window.addEventListener('resize', debounce(handleWindowResize, 200));
 

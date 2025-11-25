@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wonders</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -70,12 +71,10 @@
                         <fieldset class="text-input-group">
                             <legend class="form-legend">Pick your lucky day</legend>
                             <div class="text-input-icon">
-                                <input type="text" name="depart-date" id="depart-date" class="text-input --date" placeholder="Depart" aria-label="Departure date" required
-                                       onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input type="text" name="depart-date" id="depart-date" class="text-input --date" placeholder="Depart" aria-label="Departure date" required>
                             </div>
                             <div class="text-input-icon">
-                                <input type="text" name="return-date" id="return-date" class="text-input --date" placeholder="Return" aria-label="Return date" required
-                                       onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input type="text" name="return-date" id="return-date" class="text-input --date" placeholder="Return" aria-label="Return date" required>
                             </div>
                         </fieldset>
                         <button type="submit" class="form-submit-btn">Find My Alpine Ride</button>
@@ -322,6 +321,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>
